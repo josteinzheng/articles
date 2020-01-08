@@ -1,8 +1,6 @@
 
 # inner_mail分库分表的总结
-
   线上inner_mail表已超过一亿条记录
-
 ## 分库分表前需排查的问题
 * 分布式全局唯一ID
   * Twitter的Snowflake
@@ -13,6 +11,8 @@
   * 字段冗余
   * 多次查询，再组装
 * 跨库事务（分布式事务）
+  * XA
+  * BASE(柔性事务) Saga和Seata两种BASE类型
 
 ## References:
 * [水平分库分表的关键步骤以及可能遇到的问题](http://www.infoq.com/cn/articles/key-steps-and-likely-problems-of-horizontal-split-table?utm_source=infoq&utm_campaign=user_page&utm_medium=link)
